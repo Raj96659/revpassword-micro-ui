@@ -6,15 +6,55 @@
 
     <input
       type="email"
-      placeholder="Email"
+      placeholder="Enter Your Email"
       [(ngModel)]="email"
+      autocomplete="off"
+      name="email"
     >
 
     <input
       type="password"
-      placeholder="Master Password"
+      placeholder="Create Master Password"
       [(ngModel)]="password"
+      autocomplete="new-password"
+      name="masterPassword"
     >
+
+    <input
+  type="text"
+  placeholder="Security Question 1"
+  [(ngModel)]="securityQuestion1"
+/>
+
+<input
+  type="text"
+  placeholder="Answer 1"
+  [(ngModel)]="securityAnswer1"
+/>
+
+<input
+  type="text"
+  placeholder="Security Question 2"
+  [(ngModel)]="securityQuestion2"
+/>
+
+<input
+  type="text"
+  placeholder="Answer 2"
+  [(ngModel)]="securityAnswer2"
+/>
+
+<input
+  type="text"
+  placeholder="Security Question 3"
+  [(ngModel)]="securityQuestion3"
+/>
+
+<input
+  type="text"
+  placeholder="Answer 3"
+  [(ngModel)]="securityAnswer3"
+/>
 
     <div class="checkbox">
         <input type="checkbox" [(ngModel)]="twoFactorEnabled">

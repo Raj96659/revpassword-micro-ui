@@ -1,12 +1,14 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { environment } from '../../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class VaultService {
 
-  private api = "http://localhost:8080/vault";
+  // private api = "http://localhost:8080/vault";
+  private api = `${environment.apiUrl}/vault`;
 
   constructor(private http: HttpClient) {}
 

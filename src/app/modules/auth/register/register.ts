@@ -10,11 +10,22 @@ import { AuthService } from '../../../core/services/auth.service';
   templateUrl: './register.html',
   styleUrls: ['./register.css']
 })
+
 export class Register {
 
   email = '';
+  username = '';
   password = '';
   twoFactorEnabled = false;
+
+  securityQuestion1 = '';
+  securityAnswer1 = '';
+
+  securityQuestion2 = '';
+  securityAnswer2 = '';
+
+  securityQuestion3 = '';
+  securityAnswer3 = '';
 
   constructor(
     private authService: AuthService,
@@ -25,8 +36,18 @@ export class Register {
 
     const data = {
       email: this.email,
+      username: this.username,
       masterPassword: this.password,
-      twoFactorEnabled: this.twoFactorEnabled
+      twoFactorEnabled: this.twoFactorEnabled,
+
+      securityQuestion1: this.securityQuestion1,
+      securityAnswer1: this.securityAnswer1,
+
+      securityQuestion2: this.securityQuestion2,
+      securityAnswer2: this.securityAnswer2,
+
+      securityQuestion3: this.securityQuestion3,
+      securityAnswer3: this.securityAnswer3
     };
 
     this.authService.register(data).subscribe(()=>{
