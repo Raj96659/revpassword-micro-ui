@@ -1,0 +1,33 @@
+<div class="register-page">
+
+  <div class="register-card">
+
+    <h2>📝 Register</h2>
+
+    <input
+      type="email"
+      placeholder="Email"
+      [(ngModel)]="email"
+    >
+
+    <input
+      type="password"
+      placeholder="Master Password"
+      [(ngModel)]="password"
+    >
+
+    <div class="checkbox">
+        <input type="checkbox" [(ngModel)]="twoFactorEnabled">
+        <span>Enable 2FA (OTP login)</span>
+    </div>
+
+    <button (click)="register()">Register</button>
+
+    <p class="login-link">
+      Already have an account?
+      <a routerLink="/login">Login</a>
+    </p>
+
+  </div>
+
+</div>

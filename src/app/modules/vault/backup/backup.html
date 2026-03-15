@@ -1,0 +1,52 @@
+<div class="backup-page">
+
+  <div class="backup-card">
+
+    <h2>📦 Vault Backup & Restore</h2>
+
+    <p class="backup-desc">
+      Protect your passwords by exporting a secure backup of your vault. You can restore it anytime using the import feature.
+    </p>
+
+    <div class="backup-section">
+      <h3>⬇ Export Vault</h3>
+
+      <p class="info">
+        Download a backup file containing your encrypted vault data. Store this file safely.
+      </p>
+
+      <button (click)="exportVault()" class="export-btn">
+        Download Backup
+      </button>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="backup-section">
+      <h3>⬆ Import Vault</h3>
+
+      <p class="info">
+        Restore vault entries from a previously exported backup file.
+      </p>
+
+      <label class="import-btn">
+        Upload Backup File
+        <input type="file" hidden (change)="importVault($event)">
+      </label>
+
+      <div *ngIf="selectedFileName" class="file-name">
+        📄 Selected File: {{selectedFileName}}
+      </div>
+
+      <div *ngIf="message" class="status-msg">
+        {{message}}
+      </div>
+    </div>
+
+    <p class="warning">
+      ⚠ Never share your backup file with anyone. It contains sensitive encrypted vault data.
+    </p>
+
+  </div>
+
+</div>

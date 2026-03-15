@@ -1,0 +1,23 @@
+<div class="otp-page">
+
+  <div class="otp-card">
+
+    <h2>🔑 Verify OTP</h2>
+
+    <p class="otp-text">
+      Enter the verification code sent to your email
+    </p>
+
+    <input
+      type="text"
+      placeholder="Enter OTP"
+      [(ngModel)]="otp"
+    >
+
+    <button (click)="verify()">
+      Verify OTP
+    </button>
+
+  </div>
+
+</div>

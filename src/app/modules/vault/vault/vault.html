@@ -1,0 +1,193 @@
+<div class="vault-layout">
+
+  <!-- Sidebar -->
+
+  <div class="sidebar">
+
+
+<h2>🔐 Vault</h2>
+
+<button (click)="loadVault()">All Items</button>
+
+<button (click)="favorites()">⭐ Favorites</button>
+
+<button routerLink="/generator">⚡ Generator</button>
+
+<button routerLink="/backup">📦 Backup</button>
+
+<button routerLink="/security-dashboard">
+  🔐 Security Audit
+</button>
+
+
+<button (click)="logout()">Logout</button>
+
+
+  </div>
+
+  <!-- Main Content -->
+
+  <div class="vault-content">
+
+
+<div class="vault-card">
+
+  <h2>Add Credential</h2>
+
+  <!-- Toast message -->
+  <div *ngIf="message" class="toast">
+    {{message}}
+  </div>
+
+  <!-- Add Credential Form -->
+  <div class="add-form">
+
+    <input
+      type="text"
+      placeholder="Website"
+      [(ngModel)]="site"
+    >
+
+    <input
+      type="text"
+      placeholder="Username"
+      [(ngModel)]="username"
+    >
+
+    <input
+      type="text"
+      placeholder="Password"
+      [(ngModel)]="password"
+    >
+
+    <input
+      type="password"
+      placeholder="Master Password"
+      [(ngModel)]="masterPassword"
+    >
+
+    <select [(ngModel)]="category">
+      <option value="">Select Category</option>
+      <option value="general">General</option>
+      <option value="social">Social</option>
+      <option value="work">Work</option>
+      <option value="finance">Finance</option>
+    </select>
+
+    <label class="favorite">
+      <input type="checkbox" [(ngModel)]="favorite">
+      Mark as Favorite
+    </label>
+
+    <button class="add-btn" (click)="add()">Add Credential</button>
+
+  </div>
+
+
+  <!-- Search + Filter -->
+  <div class="search">
+
+    <input
+      [(ngModel)]="searchText"
+      placeholder="Search by website or username"
+    >
+
+    <button (click)="search()">Search</button>
+
+    <button (click)="filter()">Filter</button>
+
+  </div>
+
+
+  
+
+
+  <!-- Vault Table -->
+  <table *ngIf="vaults.length > 0">
+
+    <tr>
+      <th>Website</th>
+      <th>Username</th>
+      <th>Password</th>
+      <th>Category</th>
+      <th>Actions</th>
+    </tr>
+
+    <tr *ngFor="let v of vaults">
+
+      <td>{{v.website}}</td>
+
+      <td>
+        {{v.username}}
+        <button (click)="copyText(v.username)">📋</button>
+      </td>
+
+      <!-- PASSWORD COLUMN FIX -->
+      <td>
+
+      <span *ngIf="v.showPassword">{{ v.password }}</span>
+      <span *ngIf="!v.showPassword">••••••••</span>
+
+      </td>
+
+
+      <td>{{v.category}}</td>
+
+
+
+      <td>
+
+  <button type="button" (click)="togglePassword(v)">👁</button>
+
+  <button type="button" (click)="copyPassword(v)">📋</button>
+
+  <!-- <button type="button" (click)="deleteVault(v.id)">🗑</button> -->
+
+  <button type="button" (click)="openDeleteModal(v)">🗑</button>
+
+</td>
+
+
+    </tr>
+
+  </table>
+
+
+  <!-- Empty state -->
+  <div *ngIf="vaults.length === 0" class="empty-vault">
+    No credentials saved yet.
+  </div>
+
+</div>
+
+
+  </div>
+
+</div>
+
+<div class="modal-overlay" *ngIf="showDeleteModal">
+
+  <div class="delete-modal">
+
+    <h3>Delete Credential</h3>
+
+    <p>
+      Are you sure you want to delete
+      <b>{{deleteWebsite}}</b> ?
+    </p>
+
+    <div class="modal-actions">
+
+      <button class="cancel-btn" (click)="cancelDelete()">
+        Cancel
+      </button>
+
+      <button class="delete-btn" (click)="confirmDelete()">
+        Delete
+      </button>
+
+    </div>
+
+  </div>
+
+</div>

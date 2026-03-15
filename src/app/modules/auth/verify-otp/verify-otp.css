@@ -1,0 +1,51 @@
+.otp-page{
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background:linear-gradient(135deg,#0f172a,#020617);
+}
+
+.otp-card{
+  width:380px;
+  padding:40px;
+  background:#1e293b;
+  border-radius:12px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.4);
+  text-align:center;
+}
+
+.otp-card h2{
+  color:white;
+  margin-bottom:10px;
+}
+
+.otp-text{
+  color:#cbd5f5;
+  font-size:14px;
+  margin-bottom:20px;
+}
+
+.otp-card input{
+  width:100%;
+  padding:12px;
+  margin-bottom:20px;
+  border:none;
+  border-radius:8px;
+  outline:none;
+}
+
+.otp-card button{
+  width:100%;
+  padding:12px;
+  background:#22c55e;
+  border:none;
+  border-radius:8px;
+  color:white;
+  font-size:16px;
+  cursor:pointer;
+}
+
+.otp-card button:hover{
+  background:#16a34a;
+}

@@ -1,0 +1,50 @@
+<div class="audit-container">
+
+  <div class="audit-card">
+
+    <h2>🔐 Security Audit</h2>
+
+    <p>
+      Review the security health of your stored credentials.
+      Weak or reused passwords reduce your overall security.
+    </p>
+
+    <!-- Security Score -->
+    <div class="security-score">
+
+      <h3>Security Score: {{score}}%</h3>
+
+      <div class="score-bar">
+        <div class="score-fill" [style.width.%]="score"></div>
+      </div>
+
+    </div>
+
+    <!-- Audit Stats -->
+    <div class="audit-stats">
+
+      <div class="audit-box weak">
+        <div class="audit-title">⚠ Weak Passwords</div>
+        <h2>{{audit.weakPasswords}}</h2>
+      </div>
+
+      <div class="audit-box strong">
+        <div class="audit-title">💪 Strong Passwords</div>
+        <h2>{{audit.strongPasswords}}</h2>
+      </div>
+
+      <div class="audit-box reused">
+        <div class="audit-title">🔁 Reused Passwords</div>
+        <h2>{{audit.reusedPasswords}}</h2>
+      </div>
+
+    </div>
+
+    <!-- Warning -->
+    <p class="audit-warning">
+      ⚠ Improve your security by avoiding weak or reused passwords.
+    </p>
+
+  </div>
+
+</div>

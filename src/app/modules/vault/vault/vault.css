@@ -1,0 +1,212 @@
+/* Base */
+
+body{
+  font-family: Arial, Helvetica, sans-serif;
+  margin:0;
+  background: linear-gradient(135deg,#0f172a,#020617);
+}
+
+/* Layout */
+
+.vault-layout{
+  display:flex;
+  min-height:100vh;
+}
+
+/* Sidebar */
+
+.sidebar{
+  width:240px;
+  background:rgba(15,23,42,0.95);
+  color:white;
+  padding:30px 20px;
+  border-right:1px solid rgba(255,255,255,0.08);
+}
+
+.sidebar h2{
+  margin-bottom:30px;
+}
+
+.sidebar button{
+  width:100%;
+  padding:12px;
+  margin-bottom:12px;
+  border-radius:10px;
+  border:none;
+  background:#1e293b;
+  color:white;
+  font-size:14px;
+  cursor:pointer;
+  transition:0.25s;
+}
+
+.sidebar button:hover{
+  background:#334155;
+}
+
+/* Main Content */
+
+.vault-content{
+  flex:1;
+  padding:40px;
+}
+
+/* Card like login/register */
+
+.vault-card{
+  background:white;
+  border-radius:14px;
+  padding:30px;
+  box-shadow:0 12px 30px rgba(0,0,0,0.15);
+}
+
+/* Heading */
+
+.vault-card h2{
+  margin-bottom:20px;
+}
+
+/* Add Form */
+
+.add-form{
+  display:grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap:15px;
+  margin-bottom:20px;
+}
+
+.add-form input,
+.add-form select{
+  padding:10px;
+  border:1px solid #cbd5e1;
+  border-radius:8px;
+  font-size:14px;
+}
+
+.favorite{
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+
+.add-btn{
+  background:#22c55e;
+  color:white;
+  border:none;
+  padding:10px;
+  border-radius:8px;
+  cursor:pointer;
+  transition:0.2s;
+}
+
+.add-btn:hover{
+  background:#16a34a;
+}
+
+/* Search */
+
+.search{
+  margin-bottom:20px;
+}
+
+.search input{
+  padding:10px;
+  border:1px solid #ccc;
+  border-radius:6px;
+  margin-right:10px;
+  width:260px;
+}
+
+.search button{
+  padding:8px 14px;
+  margin-left:8px;
+  border-radius:6px;
+}
+
+/* Table */
+
+table{
+  width:100%;
+  border-collapse:collapse;
+  border-radius:10px;
+  overflow:hidden;
+}
+
+th{
+  background:#e2e8f0;
+  padding:12px;
+  text-align:left;
+}
+
+td{
+  padding:12px;
+  border-bottom:1px solid #e5e7eb;
+}
+
+table button{
+  margin-left:6px;
+  cursor:pointer;
+  border:none;
+  background:transparent;
+  font-size:14px;
+}
+
+.toast{
+  background:#dcfce7;
+  color:#166534;
+  padding:10px;
+  border-radius:8px;
+  margin-bottom:15px;
+  font-size:14px;
+  font-weight:500;
+}
+
+.empty-vault{
+  padding:20px;
+  text-align:center;
+  color:#64748b;
+  font-size:14px;
+}
+
+.modal-overlay{
+  position: fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background: rgba(0,0,0,0.5);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  z-index:1000;
+}
+
+.delete-modal{
+  background:white;
+  padding:25px;
+  border-radius:10px;
+  width:350px;
+  text-align:center;
+  box-shadow:0 10px 25px rgba(0,0,0,0.3);
+}
+
+.modal-actions{
+  margin-top:20px;
+  display:flex;
+  justify-content:space-between;
+}
+
+.cancel-btn{
+  background:#ccc;
+  border:none;
+  padding:8px 18px;
+  border-radius:6px;
+}
+
+.delete-btn{
+  background:#e74c3c;
+  color:white;
+  border:none;
+  padding:8px 18px;
+  border-radius:6px;
+}
